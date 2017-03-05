@@ -1,0 +1,10 @@
+{
+  "name": "kickass.cd",
+  "displayname": "Kickass Torrents",
+  "description": "The authorities suspended our original domain, we have now shifted to Kickass.cd",
+  "version": "1.1",
+  "site": "https://kickass.cd",
+  "module": "search.php",
+  "type": "search",
+  "class": "DownloadStationKickassSearchModule"
+}
