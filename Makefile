@@ -1,4 +1,5 @@
-.PHONY: clean test
+.PHONY: clean test test-dependencies
+PHPUNIT = vendor/bin/phpunit
 
 all: dist/download-station-kickass-search-module.dlm
 
@@ -10,11 +11,13 @@ vendor/composer.phar:
 	[ -d vendor ] || mkdir vendor
 	cd vendor && wget https://raw.githubusercontent.com/composer/getcomposer.org/master/web/installer -O - -q | php -- --quiet
 
-vendor/bin/phpunit: vendor/composer.phar
+vendor/bin/%: vendor/composer.phar
 	php vendor/composer.phar install
 
-test: vendor/bin/phpunit
-	vendor/bin/phpunit test
+test-dependencies: $(PHPUNIT)
+
+test: $(PHPUNIT)
+	$(PHPUNIT) test
 
 clean:
 	rm -rf dist vendor
