@@ -1,0 +1,10 @@
+{
+    "require": {
+        "phpunit/phpunit": "6.*"
+    },
+    "scripts": {
+      "clean": "rm -rf dist",
+      "build": "mkdir -p dist && tar -cvzf dist/download-station-kickass-search-module.dlm -C src .",
+      "test": "vendor/bin/phpunit test/"
+    }
+}
