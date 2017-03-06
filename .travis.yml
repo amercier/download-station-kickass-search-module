@@ -3,3 +3,6 @@ php: 7.1
 install: composer install
 script: composer run-script test
 before_deploy: composer run-script build
+cache:
+  directories:
+  - $HOME/.composer
