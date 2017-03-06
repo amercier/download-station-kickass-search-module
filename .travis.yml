@@ -1,4 +1,5 @@
 language: php
 php: 7.1
-install: make test-dependencies
-script: make test
+install: composer install
+script: composer run-script test
+before_deploy: composer run-script build
